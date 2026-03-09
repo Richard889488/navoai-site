@@ -80,7 +80,7 @@
             </p>
 
             <div class="hero-actions">
-              <a class="button button-primary" href=https://github.com/Richard889488/navoai-site/releases/download/v2/NavoAI_portable_v2.zip>Download NavoAI</a>
+              <a class="button button-primary" href="https://github.com/Richard889488/navoai-site/releases/download/v2/NavoAI_portable_v2.zip">Download NavoAI</a>
               <a class="button button-secondary" href="#capabilities">查看核心能力</a>
             </div>
 
@@ -186,6 +186,129 @@
       </div>
     </section>
 
+    <section class="section section-interactive" id="interactive">
+      <div class="section-orbs" aria-hidden="true">
+        <span class="mini-orb mini-orb-a"></span>
+        <span class="mini-orb mini-orb-b"></span>
+      </div>
+
+      <div class="section-heading" data-reveal>
+        <span class="section-kicker">Interactive Control</span>
+        <h2>IoT 設備互動演示</h2>
+        <p>
+          拖拽 ESP8266 設備，體驗 NavoAI 實時響應能力
+        </p>
+      </div>
+
+      <div class="interactive-demo" data-reveal>
+        <div class="demo-container">
+          <div class="demo-device-area">
+            <div class="device-card">
+              <div class="device-draggable" id="espDevice" draggable="true">
+                <div class="device-icon">
+                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="10" y="10" width="80" height="80" rx="8" fill="#2d3748" stroke="#4f8fff" stroke-width="2"/>
+                    <circle cx="35" cy="35" r="8" fill="#10b981" class="led-status"></circle>
+                    <rect x="20" y="50" width="60" height="30" rx="4" fill="rgba(79, 143, 255, 0.1)" stroke="#4f8fff" stroke-width="1"/>
+                    <text x="50" y="70" text-anchor="middle" fill="#4f8fff" font-size="14" font-family="Outfit">ESP8266</text>
+                  </svg>
+                </div>
+                <p class="device-label">ESP8266<br><span class="device-status">就緒</span></p>
+              </div>
+            </div>
+
+            <div class="feedback-area">
+              <div class="navo-response" id="nanoResponse" style="display: none;">
+                <div class="response-bubble">
+                  <span class="navo-label">Navo</span>
+                  <p id="responseText">5秒後關燈</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="demo-led-status">
+            <div class="led-indicator active" id="ledIndicator">
+              <span class="led-dot"></span>
+              <span class="led-label">LED 狀態</span>
+            </div>
+            <p class="led-info">拖拽設備後 LED 將變灰</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="use-cases" data-reveal>
+        <span class="section-kicker">Usage Scenarios</span>
+        <h2>使用場景比比皆是…</h2>
+        <div class="use-case-grid">
+          <div class="use-case-item">
+            <div class="use-case-icon">🛏️</div>
+            <h4>在床上說話控制燈</h4>
+            <p>無需起身，語音命令 NavoAI 控制房間照明</p>
+          </div>
+          <div class="use-case-item">
+            <div class="use-case-icon">📊</div>
+            <h4>製作 PPT 簡報</h4>
+            <p>自動整理素材、生成大綱、優化排版</p>
+          </div>
+          <div class="use-case-item">
+            <div class="use-case-icon">📋</div>
+            <h4>整理簡報檔案</h4>
+            <p>自動分類、重命名、備份您的演示文稿</p>
+          </div>
+          <div class="use-case-item">
+            <div class="use-case-icon">💻</div>
+            <h4>遠端控制電腦</h4>
+            <p>通過 Telegram 遠程執行任務、監控狀態</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-telegram" id="telegram">
+      <div class="section-orbs" aria-hidden="true">
+        <span class="mini-orb mini-orb-a"></span>
+        <span class="mini-orb mini-orb-b"></span>
+      </div>
+
+      <div class="telegram-panel" data-reveal>
+        <span class="panel-orb" aria-hidden="true"></span>
+        <div class="telegram-content">
+          <div class="telegram-icon">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="48" fill="#0088cc" opacity="0.1" stroke="#0088cc" stroke-width="2"/>
+              <path d="M35 50 L55 40 L65 60 L45 55 Z" fill="#0088cc" stroke="#0088cc" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="telegram-copy">
+            <span class="section-kicker">Remote Access</span>
+            <h2>Telegram 遠端聊天</h2>
+            <p>
+              連接 Telegram Bot，隨時隨地與 NavoAI 對話。無論在哪裡，都能實時控制您的設備和任務。
+            </p>
+            <div class="telegram-features">
+              <div class="feature">
+                <span class="feature-icon">✓</span>
+                <span>即時命令執行</span>
+              </div>
+              <div class="feature">
+                <span class="feature-icon">✓</span>
+                <span>設備狀態推送通知</span>
+              </div>
+              <div class="feature">
+                <span class="feature-icon">✓</span>
+                <span>私密加密通訊</span>
+              </div>
+              <div class="feature">
+                <span class="feature-icon">✓</span>
+                <span>全球遠程訪問</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-proof">
       <div class="section-orbs" aria-hidden="true">
         <span class="mini-orb mini-orb-a"></span>
@@ -249,5 +372,74 @@
 </div>
 
 <script src="js/main.js"></script>
+<script>
+  // Interactive device dragging functionality
+  const espDevice = document.getElementById('espDevice');
+  const nanoResponse = document.getElementById('nanoResponse');
+  const responseText = document.getElementById('responseText');
+  const ledIndicator = document.getElementById('ledIndicator');
+  const ledDot = ledIndicator.querySelector('.led-dot');
+  
+  let isDragging = false;
+  let dragStartTime = 0;
+
+  espDevice.addEventListener('dragstart', (e) => {
+    isDragging = true;
+    dragStartTime = Date.now();
+    espDevice.style.opacity = '0.7';
+    nanoResponse.style.display = 'block';
+    responseText.textContent = '5秒後關燈';
+    
+    // Animate response
+    nanoResponse.style.animation = 'none';
+    setTimeout(() => {
+      nanoResponse.style.animation = 'slideInResponse 0.6s ease-out';
+    }, 10);
+  });
+
+  espDevice.addEventListener('dragend', (e) => {
+    if (isDragging) {
+      isDragging = false;
+      const dragDuration = Date.now() - dragStartTime;
+      
+      // Grey out LED after drag
+      ledIndicator.classList.remove('active');
+      ledIndicator.classList.add('inactive');
+      ledDot.style.background = '#ccc';
+      
+      // Update status text
+      const statusEl = espDevice.querySelector('.device-status');
+      statusEl.textContent = '已執行';
+      statusEl.style.color = '#ef4444';
+      
+      // Hide response after delay
+      setTimeout(() => {
+        nanoResponse.style.animation = 'slideOutResponse 0.6s ease-out';
+        setTimeout(() => {
+          nanoResponse.style.display = 'none';
+          // Reset after 3 seconds
+          setTimeout(() => {
+            espDevice.style.opacity = '1';
+            ledIndicator.classList.remove('inactive');
+            ledIndicator.classList.add('active');
+            ledDot.style.background = '#10b981';
+            statusEl.textContent = '就緒';
+            statusEl.style.color = '#6b7280';
+          }, 2000);
+        }, 600);
+      }, 2500);
+    }
+  });
+
+  // Prevent default drag behavior
+  espDevice.addEventListener('drag', (e) => {
+    e.preventDefault();
+  });
+
+  // Add drag visual feedback
+  document.addEventListener('dragover', (e) => {
+    e.preventDefault();
+  });
+</script>
 </body>
 </html>
