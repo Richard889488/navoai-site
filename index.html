@@ -1,101 +1,66 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <link rel="icon" type="image/png" href="favicon.png">
-    
-    <link rel="shortcut icon" href="favicon.png">
-</head>
-<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NavoAI | 無須動手，自我成長</title>
-<meta
-  name="description"
-  content="NavoAI 家庭助手 OpenClaw的兄弟">
+<title>NavoAI | Local Automation AI</title>
+<meta name="description" content="NavoAI is a local-first automation assistant with Flask control, desktop automation, memory, Office workflows, image generation, and ESP integration.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-  href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
-  rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "NavoAI",
-  "operatingSystem": "Windows, Android",
-  "applicationCategory": "DeveloperApplication",
-  "url": "https://navoai.io/",
-  "author": {
-    "@type": "Person",
-    "name": "Lin You-Qian"
-  },
-  "description": "NavoAI 是一個專注於ai agent、自動電腦作業的應用程式"
-}
-</script>
 <body>
 <div class="page-shell">
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="#top" aria-label="NavoAI 首頁">
+      <a class="brand" href="#top" aria-label="NavoAI Home">
         <span class="brand-mark"></span>
         <span class="brand-text">NavoAI</span>
       </a>
-
-      <nav class="site-nav" aria-label="主選單">
-        <a href="#capabilities">懶人必備</a>
-        <a href="#workflow">多任務</a>
-        <a href="#cta">多種技能</a>
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="#capabilities">Capabilities</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#cta">Download</a>
       </nav>
-
-      <a class="nav-cta" href="https://media.githubusercontent.com/media/Richard889488/navoai-site/V8/downloads/NavoAI_portable_V8.zip">Download</a>
+      <a class="nav-cta" href="https://media.githubusercontent.com/media/Richard889488/navoai-site/main/downloads/NavoAI_portable_V8.zip">Download V8</a>
     </div>
   </header>
 
   <main>
     <section class="hero" id="top">
       <div class="hero-background" aria-hidden="true"></div>
-
       <div class="hero-inner">
         <div class="hero-scene">
           <div class="hero-visual" aria-hidden="true">
-            <div class="orb-shell orb-shell-left" data-depth="18">
-              <div class="orb orb-left"></div>
-            </div>
-            <div class="orb-shell orb-shell-right" data-depth="30">
-              <div class="orb orb-right"></div>
-            </div>
-            <div class="orb-shell orb-shell-center" data-depth="12">
-              <div class="orb orb-center"></div>
-            </div>
+            <div class="orb-shell orb-shell-left" data-depth="18"><div class="orb orb-left"></div></div>
+            <div class="orb-shell orb-shell-right" data-depth="30"><div class="orb orb-right"></div></div>
+            <div class="orb-shell orb-shell-center" data-depth="12"><div class="orb orb-center"></div></div>
           </div>
-
           <div class="hero-copy" data-reveal>
             <span class="eyebrow">Adaptive AI Operating System</span>
             <h1>NavoAI</h1>
-            <p class="hero-tagline">無須動手|自我成長</p>
+            <p class="hero-tagline">Local-first automation, memory, and desktop control.</p>
             <p class="hero-description">
-              讓NavoAI自動觀察、規劃、執行與優化，把一次工具使用，升級為自己進化的工作系統。
+              NavoAI combines a PyQt desktop orb, a mobile-friendly Flask control panel, long-term memory,
+              Codex-style planning and verification, skill creation, Office automation, real file outputs, and ESP integration in one local workspace.
             </p>
-
             <div class="hero-actions">
-              <a class="button button-primary" href="https://media.githubusercontent.com/media/Richard889488/navoai-site/V8/downloads/NavoAI_portable_V8.zip">Download NavoAI</a>
-              <a class="button button-secondary" href="#capabilities">查看核心能力</a>
+              <a class="button button-primary" href="https://media.githubusercontent.com/media/Richard889488/navoai-site/main/downloads/NavoAI_portable_V8.zip">Download NavoAI V8</a>
+              <a class="button button-secondary" href="#capabilities">See capabilities</a>
             </div>
-
             <div class="hero-stats">
               <div class="stat-card">
-                <span class="stat-value">IoT</span>
-                <span class="stat-label">行程表|控制家中的設備</span>
+                <span class="stat-value">Desktop</span>
+                <span class="stat-label">PyQt orb, computer control, OCR, and workflow execution</span>
               </div>
               <div class="stat-card">
-                <span class="stat-value">No-hand</span>
-                <span class="stat-label">語音輸入結合|自動整理更新</span>
+                <span class="stat-value">Web</span>
+                <span class="stat-label">Flask chat console, QR access, logs, tasks, and device tabs</span>
               </div>
               <div class="stat-card">
-                <span class="stat-value">Private</span>
-                <span class="stat-label">可私有部署-您自己的API</span>
+                <span class="stat-value">AI + ESP</span>
+                <span class="stat-label">Multi-provider AI, persistent memory, skills, and ESP device routing</span>
               </div>
             </div>
           </div>
@@ -108,35 +73,38 @@
         <span class="mini-orb mini-orb-a"></span>
         <span class="mini-orb mini-orb-b"></span>
       </div>
-
       <div class="section-heading" data-reveal>
         <span class="section-kicker">Core Capabilities</span>
-        <h2>懶人必備</h2>
+        <h2>What V8 adds</h2>
         <p>
-          原生IOT，透過連接ESP8266、32可以直接用萬用json控制設備，與行程表結合。
+          V8 focuses on reliable artifact creation, Codex-style execution contracts, repair fallback, cleaner UI text,
+          and stronger deterministic recovery when provider responses are weak.
         </p>
       </div>
-
       <div class="feature-grid">
         <article class="feature-card" data-reveal>
           <span class="card-orb" aria-hidden="true"></span>
-          <span class="feature-index">出門</span>
-          <h3>我下午10點要出門一趟，家裡就沒人了</h3>
-          <p>Navo：好的，我會再10點幫忙關燈</p>
+          <span class="feature-index">01</span>
+          <h3>Real outputs</h3>
+          <p>Generate images, Word reports, Excel charts, PowerPoint decks, markdown, and browser notes as real files.</p>
         </article>
-
         <article class="feature-card" data-reveal>
           <span class="card-orb" aria-hidden="true"></span>
-          <span class="feature-index">看守</span>
-          <h3>看家</h3>
-          <p>Navo：IP攝影機，偵測到有人經過，但現在是晚上，建議去查看。</p>
+          <span class="feature-index">02</span>
+          <h3>Desktop automation</h3>
+          <p>Use OCR, click_text, click_image, screenshots, hotkeys, and UIA controls to operate Windows apps.</p>
         </article>
-
         <article class="feature-card" data-reveal>
           <span class="card-orb" aria-hidden="true"></span>
-          <span class="feature-index">隨時待命</span>
-          <h3>幫我把檔案整理整理</h3>
-          <p>Navo：桌面檔案已配放完畢。</p>
+          <span class="feature-index">03</span>
+          <h3>Self-repair</h3>
+          <p>When AI planning fails, NavoAI now falls back to deterministic local workflows to still finish the job.</p>
+        </article>
+        <article class="feature-card" data-reveal>
+          <span class="card-orb" aria-hidden="true"></span>
+          <span class="feature-index">04</span>
+          <h3>Codex loop</h3>
+          <p>Complex tasks now keep a Codex brief: requested artifacts, preferred tools, verification checks, and reusable lessons.</p>
         </article>
       </div>
     </section>
@@ -146,164 +114,39 @@
         <span class="mini-orb mini-orb-a"></span>
         <span class="mini-orb mini-orb-b"></span>
       </div>
-
       <div class="workflow-panel" data-reveal>
         <span class="panel-orb" aria-hidden="true"></span>
         <div class="workflow-copy">
           <span class="section-kicker">Workflow</span>
-          <h2>多任務_自我提醒</h2>
+          <h2>How NavoAI finishes a complex task</h2>
           <p>
-            NavoAI 不只執行單一步驟，還會給自己設定鬧鐘。
+            Complex requests are planned, executed, repaired when needed, and finally verified against the requested output path.
           </p>
         </div>
-
         <div class="workflow-steps">
           <div class="workflow-step">
             <span class="card-orb" aria-hidden="true"></span>
-            <span class="step-index">排程</span>
-            <strong>兩點開趴，讓燈噪動</strong>
-            <p>Navo：2點讓燈閃爍</p>
+            <span class="step-index">01</span>
+            <strong>Plan</strong>
+            <p>Break the request into executable steps and list the target artifact.</p>
           </div>
           <div class="workflow-step">
             <span class="card-orb" aria-hidden="true"></span>
-            <span class="step-index">自己提醒</span>
-            <strong>(時間到了)</strong>
-            <p>Navo：開關開關燈</p>
+            <span class="step-index">02</span>
+            <strong>Execute</strong>
+            <p>Use direct runtime actions such as `image_generate`, `office`, `table`, `browser_task`, and `computer`.</p>
           </div>
           <div class="workflow-step">
             <span class="card-orb" aria-hidden="true"></span>
-            <span class="step-index">無格式，時程表</span>
-            <strong>CMD</strong>
-            <p>任務完成關閉電腦</p>
+            <span class="step-index">03</span>
+            <strong>Repair</strong>
+            <p>If AI returns a weak plan, deterministic fallback workflows complete the required artifact anyway.</p>
           </div>
           <div class="workflow-step">
             <span class="card-orb" aria-hidden="true"></span>
-            <span class="step-index">自我增強</span>
-            <strong>技能學習</strong>
-            <p>自行閱讀程式庫，並增強自我。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-interactive" id="interactive">
-      <div class="section-orbs" aria-hidden="true">
-        <span class="mini-orb mini-orb-a"></span>
-        <span class="mini-orb mini-orb-b"></span>
-      </div>
-
-      <div class="section-heading" data-reveal>
-        <span class="section-kicker">Interactive Control</span>
-        <h2>IoT 設備互動演示</h2>
-        <p>
-          拖拽 ESP8266 設備，體驗 NavoAI 實時響應能力
-        </p>
-      </div>
-
-      <div class="interactive-demo" data-reveal>
-        <div class="demo-container">
-          <div class="demo-device-area">
-            <div class="device-card">
-              <div class="device-draggable" id="espDevice" draggable="true">
-                <div class="device-icon">
-                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="10" y="10" width="80" height="80" rx="8" fill="#2d3748" stroke="#4f8fff" stroke-width="2"/>
-                    <circle cx="35" cy="35" r="8" fill="#10b981" class="led-status"></circle>
-                    <rect x="20" y="50" width="60" height="30" rx="4" fill="rgba(79, 143, 255, 0.1)" stroke="#4f8fff" stroke-width="1"/>
-                    <text x="50" y="70" text-anchor="middle" fill="#4f8fff" font-size="14" font-family="Outfit">ESP8266</text>
-                  </svg>
-                </div>
-                <p class="device-label">ESP8266<br><span class="device-status">就緒</span></p>
-              </div>
-            </div>
-
-            <div class="feedback-area">
-              <div class="navo-response" id="nanoResponse" style="display: none;">
-                <div class="response-bubble">
-                  <span class="navo-label">Navo</span>
-                  <p id="responseText">5秒後關燈</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="demo-led-status">
-            <div class="led-indicator active" id="ledIndicator">
-              <span class="led-dot"></span>
-              <span class="led-label">LED 狀態</span>
-            </div>
-            <p class="led-info">拖拽設備後 LED 將變灰</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="use-cases" data-reveal>
-        <span class="section-kicker">Usage Scenarios</span>
-        <h2>使用場景比比皆是…</h2>
-        <div class="use-case-grid">
-          <div class="use-case-item">
-            <div class="use-case-icon">🛏️</div>
-            <h4>在床上說話控制燈</h4>
-            <p>無需起身，語音命令 NavoAI 控制房間照明</p>
-          </div>
-          <div class="use-case-item">
-            <div class="use-case-icon">📊</div>
-            <h4>製作 PPT 簡報</h4>
-            <p>自動整理素材、生成大綱、優化排版</p>
-          </div>
-          <div class="use-case-item">
-            <div class="use-case-icon">📋</div>
-            <h4>整理簡報檔案</h4>
-            <p>自動分類、重命名、備份您的演示文稿</p>
-          </div>
-          <div class="use-case-item">
-            <div class="use-case-icon">💻</div>
-            <h4>遠端控制電腦</h4>
-            <p>通過 Telegram 遠程執行任務、監控狀態</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-telegram" id="telegram">
-      <div class="section-orbs" aria-hidden="true">
-        <span class="mini-orb mini-orb-a"></span>
-        <span class="mini-orb mini-orb-b"></span>
-      </div>
-
-      <div class="telegram-panel" data-reveal>
-        <span class="panel-orb" aria-hidden="true"></span>
-        <div class="telegram-content">
-          <div class="telegram-icon">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="50" r="48" fill="#0088cc" opacity="0.1" stroke="#0088cc" stroke-width="2"/>
-              <path d="M35 50 L55 40 L65 60 L45 55 Z" fill="#0088cc" stroke="#0088cc" stroke-width="1.5" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="telegram-copy">
-            <span class="section-kicker">Remote Access</span>
-            <h2>Telegram 遠端聊天</h2>
-            <p>
-              連接 Telegram Bot，隨時隨地與 NavoAI 對話。無論在哪裡，都能實時控制您的設備和任務。
-            </p>
-            <div class="telegram-features">
-              <div class="feature">
-                <span class="feature-icon">✓</span>
-                <span>即時命令執行</span>
-              </div>
-              <div class="feature">
-                <span class="feature-icon">✓</span>
-                <span>設備狀態推送通知</span>
-              </div>
-              <div class="feature">
-                <span class="feature-icon">✓</span>
-                <span>私密加密通訊</span>
-              </div>
-              <div class="feature">
-                <span class="feature-icon">✓</span>
-                <span>全球遠程訪問</span>
-              </div>
-            </div>
+            <span class="step-index">04</span>
+            <strong>Verify</strong>
+            <p>NavoAI checks the saved file path and remembers the result for later runs.</p>
           </div>
         </div>
       </div>
@@ -314,26 +157,24 @@
         <span class="mini-orb mini-orb-a"></span>
         <span class="mini-orb mini-orb-b"></span>
       </div>
-
       <div class="proof-grid">
         <article class="proof-card proof-card-wide" data-reveal>
           <span class="card-orb" aria-hidden="true"></span>
-          <span class="section-kicker">說話不好用?</span>
+          <span class="section-kicker">Included in V8</span>
           <p>
-            打開127.0.0.1:5050，查看log、對話、設定ESP設備...
+            Flask web console, QR access, PyQt orb UI, multi-provider AI routing, real image generation output,
+            Office automation, OCR-assisted desktop control, long-term memory, and ESP device management.
           </p>
         </article>
-
         <article class="proof-card" data-reveal>
           <span class="card-orb" aria-hidden="true"></span>
-          <span class="proof-label">隱私懼怕?</span>
-          <p>NavoAI會用你自己的API，我們沒有教他給我們資料。</p>
+          <span class="proof-label">Local workspace</span>
+          <p>Outputs and runtime data stay in a user-writable NavoAI workspace instead of the EXE folder.</p>
         </article>
-
         <article class="proof-card" data-reveal>
           <span class="card-orb" aria-hidden="true"></span>
-          <span class="proof-label">Windows視窗不好看?</span>
-          <p>我們透過：泡泡緩動+點選泡泡時的極簡設定視窗，讓UI煥然一新。</p>
+          <span class="proof-label">Remote control</span>
+          <p>Use the Flask interface, QR code, and optional messaging integrations to control NavoAI remotely.</p>
         </article>
       </div>
     </section>
@@ -343,22 +184,14 @@
         <span class="mini-orb mini-orb-a"></span>
         <span class="mini-orb mini-orb-b"></span>
       </div>
-
       <div class="cta-panel" data-reveal>
         <span class="panel-orb" aria-hidden="true"></span>
-        <span class="section-kicker">Launch</span>
-        <h2>How to use?
-        </h2>
-        <p>下載NavoAI.zip解壓縮</p>
-        <p>打開資料夾中的apikey.json</p>
-        <p>去 https://openrouter.ai/ 獲取APIkey 並將"active_provider": "groq"改成"active_provider": "openrouter"</p>
-        <p>(active_provider的value要為您填入的APIKEY發行公司)</p>
-        <p>最後將openrouter"openrouter": 大括弧中間的""填入您的APIkey </p>
-        <p>故：更改最上方的"groq"為"openrouter"並\n最後於下方的openrouter裡面的""中填入您的APIkey</p>
-        <h3>>打開NavoAI.exe並允許權限，開啟豐富的對話</h3>
+        <span class="section-kicker">Download</span>
+        <h2>Get NavoAI V8</h2>
+        <p>Download the latest portable package, configure your provider keys, and launch `NavoAI.exe`.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="https://media.githubusercontent.com/media/Richard889488/navoai-site/V8/downloads/NavoAI_portable_V8.zip">立即下載</a>
-          <a class="button button-secondary" href="#top">回到頂部</a>
+          <a class="button button-primary" href="https://media.githubusercontent.com/media/Richard889488/navoai-site/main/downloads/NavoAI_portable_V8.zip">Download V8 ZIP</a>
+          <a class="button button-secondary" href="#top">Back to top</a>
         </div>
       </div>
     </section>
@@ -366,80 +199,10 @@
 
   <footer class="site-footer">
     <p>NavoAI</p>
-    <p>請務必小心提供任務，請勿給出類似刪除檔案等指令，如AI損害到您的電腦檔案，我們向您致歉，本公司不會提供任何法律補償。謝謝!</p>
-    <p>開發者：Richard Lin 林佑謙 Gmail：richardtwomaker@gmail.com</p>
+    <p>Local automation, memory, skills, Office workflows, image generation, and ESP control in one project.</p>
+    <p>Richard Lin 繚 richardtwomaker@gmail.com</p>
   </footer>
 </div>
-
 <script src="js/main.js"></script>
-<script>
-  // Interactive device dragging functionality
-  const espDevice = document.getElementById('espDevice');
-  const nanoResponse = document.getElementById('nanoResponse');
-  const responseText = document.getElementById('responseText');
-  const ledIndicator = document.getElementById('ledIndicator');
-  const ledDot = ledIndicator.querySelector('.led-dot');
-  
-  let isDragging = false;
-  let dragStartTime = 0;
-
-  espDevice.addEventListener('dragstart', (e) => {
-    isDragging = true;
-    dragStartTime = Date.now();
-    espDevice.style.opacity = '0.7';
-    nanoResponse.style.display = 'block';
-    responseText.textContent = '5秒後關燈';
-    
-    // Animate response
-    nanoResponse.style.animation = 'none';
-    setTimeout(() => {
-      nanoResponse.style.animation = 'slideInResponse 0.6s ease-out';
-    }, 10);
-  });
-
-  espDevice.addEventListener('dragend', (e) => {
-    if (isDragging) {
-      isDragging = false;
-      const dragDuration = Date.now() - dragStartTime;
-      
-      // Grey out LED after drag
-      ledIndicator.classList.remove('active');
-      ledIndicator.classList.add('inactive');
-      ledDot.style.background = '#ccc';
-      
-      // Update status text
-      const statusEl = espDevice.querySelector('.device-status');
-      statusEl.textContent = '已執行';
-      statusEl.style.color = '#ef4444';
-      
-      // Hide response after delay
-      setTimeout(() => {
-        nanoResponse.style.animation = 'slideOutResponse 0.6s ease-out';
-        setTimeout(() => {
-          nanoResponse.style.display = 'none';
-          // Reset after 3 seconds
-          setTimeout(() => {
-            espDevice.style.opacity = '1';
-            ledIndicator.classList.remove('inactive');
-            ledIndicator.classList.add('active');
-            ledDot.style.background = '#10b981';
-            statusEl.textContent = '就緒';
-            statusEl.style.color = '#6b7280';
-          }, 2000);
-        }, 600);
-      }, 2500);
-    }
-  });
-
-  // Prevent default drag behavior
-  espDevice.addEventListener('drag', (e) => {
-    e.preventDefault();
-  });
-
-  // Add drag visual feedback
-  document.addEventListener('dragover', (e) => {
-    e.preventDefault();
-  });
-</script>
 </body>
 </html>
