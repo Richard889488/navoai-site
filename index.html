@@ -1,553 +1,323 @@
 <!DOCTYPE html>
-
 <html lang="zh-Hant">
-
 <head>
-
-  <meta charset="UTF-8" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Navoai 霧面慶祝賀卡</title>
-
-  <style>
-
-    * {
-
-      box-sizing: border-box;
-
-      margin: 0;
-
-      padding: 0;
-
-    }
-
-    body {
-
-      min-height: 100vh;
-
-      overflow: hidden;
-
-      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-
-      background:
-
-        radial-gradient(circle at 20% 15%, rgba(255,255,255,.55), transparent 28%),
-
-        radial-gradient(circle at 80% 20%, rgba(255,255,255,.32), transparent 26%),
-
-        linear-gradient(135deg, #ffe6f2, #d9c6ff 42%, #7b2ff7 100%);
-
-      display: flex;
-
-      justify-content: center;
-
-      align-items: center;
-
-      color: #fff;
-
-    }
-
-    .page {
-
-      position: relative;
-
-      width: 100%;
-
-      height: 100vh;
-
-      overflow: hidden;
-
-      display: flex;
-
-      justify-content: center;
-
-      align-items: center;
-
-    }
-
-    .fog {
-
-      position: absolute;
-
-      width: 170vw;
-
-      height: 170vh;
-
-      background:
-
-        radial-gradient(circle at 20% 40%, rgba(255,255,255,.34), transparent 28%),
-
-        radial-gradient(circle at 60% 30%, rgba(255,255,255,.24), transparent 32%),
-
-        radial-gradient(circle at 80% 70%, rgba(255,255,255,.28), transparent 30%);
-
-      filter: blur(42px);
-
-      animation: fogMove 18s ease-in-out infinite alternate;
-
-      z-index: 1;
-
-    }
-
-    .card {
-
-      position: relative;
-
-      width: min(90vw, 540px);
-
-      min-height: 620px;
-
-      padding: 48px 36px;
-
-      border-radius: 38px;
-
-      background: rgba(255, 255, 255, 0.18);
-
-      backdrop-filter: blur(28px) saturate(1.35);
-
-      -webkit-backdrop-filter: blur(28px) saturate(1.35);
-
-      box-shadow:
-
-        0 35px 90px rgba(60, 0, 120, 0.34),
-
-        inset 0 0 0 1px rgba(255, 255, 255, 0.38),
-
-        inset 0 28px 70px rgba(255, 255, 255, 0.16);
-
-      text-align: center;
-
-      animation: cardFloat 4s ease-in-out infinite;
-
-      z-index: 5;
-
-    }
-
-    .card::before {
-
-      content: "";
-
-      position: absolute;
-
-      inset: 1px;
-
-      border-radius: 38px;
-
-      background: linear-gradient(145deg, rgba(255,255,255,.38), transparent 42%, rgba(255,255,255,.14));
-
-      pointer-events: none;
-
-    }
-
-    .badge {
-
-      position: relative;
-
-      display: inline-block;
-
-      padding: 10px 22px;
-
-      border-radius: 999px;
-
-      background: rgba(255, 255, 255, 0.24);
-
-      backdrop-filter: blur(18px);
-
-      font-weight: 800;
-
-      letter-spacing: 3px;
-
-      margin-bottom: 28px;
-
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,.42);
-
-    }
-
-    h1 {
-
-      position: relative;
-
-      font-size: clamp(2.5rem, 8vw, 4.8rem);
-
-      line-height: 1.05;
-
-      margin-bottom: 20px;
-
-      text-shadow: 0 8px 28px rgba(60, 0, 100, 0.35);
-
-    }
-
-    .message {
-
-      position: relative;
-
-      font-size: 1.2rem;
-
-      line-height: 2;
-
-      color: rgba(255, 255, 255, 0.94);
-
-      margin-bottom: 36px;
-
-    }
-
-    .gift {
-
-      position: relative;
-
-      width: 150px;
-
-      height: 135px;
-
-      margin: 28px auto 36px;
-
-      animation: giftBounce 1.5s ease-in-out infinite;
-
-    }
-
-    .gift-box {
-
-      position: absolute;
-
-      bottom: 0;
-
-      width: 150px;
-
-      height: 95px;
-
-      border-radius: 18px;
-
-      background: linear-gradient(135deg, rgba(255,71,126,.82), rgba(255,133,161,.62));
-
-      backdrop-filter: blur(12px);
-
-      box-shadow: 0 18px 32px rgba(100, 0, 70, 0.28);
-
-    }
-
-    .gift-lid {
-
-      position: absolute;
-
-      top: 12px;
-
-      left: -8px;
-
-      width: 166px;
-
-      height: 38px;
-
-      border-radius: 16px;
-
-      background: linear-gradient(135deg, rgba(255,241,118,.9), rgba(255,193,7,.65));
-
-      animation: lidOpen 2.4s ease-in-out infinite;
-
-      transform-origin: left bottom;
-
-    }
-
-    .gift-ribbon-v {
-
-      position: absolute;
-
-      left: 60px;
-
-      bottom: 0;
-
-      width: 30px;
-
-      height: 132px;
-
-      background: rgba(255, 255, 255, 0.72);
-
-      border-radius: 8px;
-
-    }
-
-    .gift-ribbon-h {
-
-      position: absolute;
-
-      left: 0;
-
-      bottom: 42px;
-
-      width: 150px;
-
-      height: 24px;
-
-      background: rgba(255, 255, 255, 0.72);
-
-    }
-
-    .button {
-
-      position: relative;
-
-      display: inline-block;
-
-      padding: 15px 32px;
-
-      border-radius: 999px;
-
-      background: rgba(255,255,255,.72);
-
-      backdrop-filter: blur(16px);
-
-      color: #8f28f4;
-
-      font-weight: 900;
-
-      text-decoration: none;
-
-      box-shadow:
-
-        0 15px 35px rgba(90, 0, 130, 0.25),
-
-        inset 0 0 0 1px rgba(255,255,255,.7);
-
-      transition: 0.25s;
-
-    }
-
-    .button:hover {
-
-      transform: translateY(-4px) scale(1.04);
-
-    }
-
-    .balloon {
-
-      position: absolute;
-
-      bottom: -210px;
-
-      width: 72px;
-
-      height: 94px;
-
-      border-radius: 50% 50% 46% 46%;
-
-      opacity: 0.82;
-
-      filter: saturate(.9);
-
-      backdrop-filter: blur(8px);
-
-      animation: balloonUp linear infinite;
-
-      z-index: 2;
-
-    }
-
-    .balloon::before {
-
-      content: "";
-
-      position: absolute;
-
-      top: 14px;
-
-      left: 18px;
-
-      width: 18px;
-
-      height: 32px;
-
-      border-radius: 50%;
-
-      background: rgba(255,255,255,.35);
-
-      filter: blur(2px);
-
-    }
-
-    .balloon::after {
-
-      content: "";
-
-      position: absolute;
-
-      left: 50%;
-
-      top: 92px;
-
-      width: 2px;
-
-      height: 125px;
-
-      background: rgba(255,255,255,0.5);
-
-    }
-
-    .b1 { left: 5%;  background: rgba(255,71,126,.62); animation-duration: 7s; animation-delay: -1s; }
-
-    .b2 { left: 15%; background: rgba(255,209,102,.62); animation-duration: 9s; animation-delay: -4s; }
-
-    .b3 { left: 27%; background: rgba(6,214,160,.58); animation-duration: 8s; animation-delay: -2s; }
-
-    .b4 { left: 39%; background: rgba(76,201,240,.58); animation-duration: 10s; animation-delay: -6s; }
-
-    .b5 { left: 52%; background: rgba(255,255,255,.46); animation-duration: 8.5s; animation-delay: -3s; }
-
-    .b6 { left: 64%; background: rgba(255,118,181,.58); animation-duration: 9.5s; animation-delay: -5s; }
-
-    .b7 { left: 76%; background: rgba(160,132,255,.6); animation-duration: 7.8s; animation-delay: -2.8s; }
-
-    .b8 { left: 88%; background: rgba(255,241,118,.58); animation-duration: 10.5s; animation-delay: -7s; }
-
-    @keyframes cardFloat {
-
-      0%, 100% { transform: translateY(0); }
-
-      50% { transform: translateY(-16px); }
-
-    }
-
-    @keyframes fogMove {
-
-      0% { transform: translate(-8%, -4%) rotate(0deg); }
-
-      100% { transform: translate(8%, 5%) rotate(8deg); }
-
-    }
-
-    @keyframes giftBounce {
-
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-
-      50% { transform: translateY(-10px) rotate(2deg); }
-
-    }
-
-    @keyframes lidOpen {
-
-      0%, 100% { transform: rotate(0deg); }
-
-      50% { transform: rotate(-10deg) translateY(-8px); }
-
-    }
-
-    @keyframes balloonUp {
-
-      0% {
-
-        transform: translateY(0) translateX(0) rotate(0deg);
-
-        opacity: 0;
-
-      }
-
-      8% {
-
-        opacity: 0.85;
-
-      }
-
-      50% {
-
-        transform: translateY(-65vh) translateX(28px) rotate(8deg);
-
-      }
-
-      100% {
-
-        transform: translateY(-135vh) translateX(-22px) rotate(-8deg);
-
-        opacity: 0;
-
-      }
-
-    }
-
-    @media (max-width: 600px) {
-
-      .card {
-
-        min-height: 560px;
-
-        padding: 38px 24px;
-
-      }
-
-      .message {
-
-        font-size: 1rem;
-
-      }
-
-      .balloon {
-
-        width: 58px;
-
-        height: 78px;
-
-      }
-
-    }
-
-  </style>
-
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <link rel="shortcut icon" href="favicon.png">
 </head>
-
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NavoAI | 無須動手，自我成長</title>
+<meta
+  name="description"
+  content="NavoAI 家庭助手 OpenClaw的兄弟">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "NavoAI",
+  "operatingSystem": "Windows, Android",
+  "applicationCategory": "DeveloperApplication",
+  "url": "https://navoai.io/",
+  "author": {
+    "@type": "Person",
+    "name": "Lin You-Qian"
+  },
+  "description": "NavoAI 是一個專注於ai agent、自動電腦作業的應用程式"
+}
+</script>
 <body>
+<div class="page-shell">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="NavoAI 首頁">
+        <span class="brand-mark"></span>
+        <span class="brand-text">NavoAI</span>
+      </a>
 
-  <main class="page">
+      <nav class="site-nav" aria-label="主選單">
+        <a href="#capabilities">懶人必備</a>
+        <a href="#workflow">多任務</a>
+        <a href="#cta">多種技能</a>
+      </nav>
 
-    <div class="fog"></div>
+      <a class="nav-cta" href="https://media.githubusercontent.com/media/Richard889488/navoai-site/main/downloads/BUILDv9.zip">Download</a>
+    </div>
+  </header>
 
-    <div class="balloon b1"></div>
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-background" aria-hidden="true"></div>
 
-    <div class="balloon b2"></div>
+      <div class="hero-inner">
+        <div class="hero-scene">
+          <div class="hero-visual" aria-hidden="true">
+            <div class="orb-shell orb-shell-left" data-depth="18">
+              <div class="orb orb-left"></div>
+            </div>
+            <div class="orb-shell orb-shell-right" data-depth="30">
+              <div class="orb orb-right"></div>
+            </div>
+            <div class="orb-shell orb-shell-center" data-depth="12">
+              <div class="orb orb-center"></div>
+            </div>
+          </div>
 
-    <div class="balloon b3"></div>
+          <div class="hero-copy" data-reveal>
+            <span class="eyebrow">Adaptive AI Operating System</span>
+            <h1>NavoAI</h1>
+            <p class="hero-tagline">無須動手|自我成長</p>
+            <p class="hero-description">
+              讓NavoAI自動觀察、規劃、執行與優化，把一次工具使用，升級為自己進化的工作系統。
+            </p>
 
-    <div class="balloon b4"></div>
+            <div class="hero-actions">
+              <a class="button button-primary" href="https://media.githubusercontent.com/media/Richard889488/navoai-site/main/downloads/BUILDv9.zip">Download NavoAI</a>
+              <a class="button button-secondary" href="#capabilities">查看核心能力</a>
+            </div>
 
-    <div class="balloon b5"></div>
-
-    <div class="balloon b6"></div>
-
-    <div class="balloon b7"></div>
-
-    <div class="balloon b8"></div>
-
-    <section class="card">
-
-      <div class="badge">CELEBRATION</div>
-
-      <h1>阿嬤生日快樂</h1>
-
-      <div class="gift">
-
-        <div class="gift-lid"></div>
-
-        <div class="gift-box"></div>
-
-        <div class="gift-ribbon-v"></div>
-
-        <div class="gift-ribbon-h"></div>
-
+            <div class="hero-stats">
+              <div class="stat-card">
+                <span class="stat-value">IoT</span>
+                <span class="stat-label">行程表|控制家中的設備</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-value">No-hand</span>
+                <span class="stat-label">語音輸入結合|自動整理更新</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-value">Private</span>
+                <span class="stat-label">可私有部署-您自己的API</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <p class="message">
-
-        祝您福如東海、壽比南山，<br>
-
-        希望您每天開心，<br>
-
-        把努力、祝福與新的開始一起收藏。
-
-      </p>
-
-      <a href="#" class="button">謝謝阿嬤每天跟阿公幫我送便當🍱</a>
-
     </section>
 
+    <section class="section section-capabilities" id="capabilities">
+      <div class="section-orbs" aria-hidden="true">
+        <span class="mini-orb mini-orb-a"></span>
+        <span class="mini-orb mini-orb-b"></span>
+      </div>
+
+      <div class="section-heading" data-reveal>
+        <span class="section-kicker">Core Capabilities</span>
+        <h2>懶人必備</h2>
+        <p>
+          原生IOT，透過連接ESP8266、32可以直接用萬用json控制設備，與行程表結合。
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card" data-reveal>
+          <span class="card-orb" aria-hidden="true"></span>
+          <span class="feature-index">出門</span>
+          <h3>我下午10點要出門一趟，家裡就沒人了</h3>
+          <p>Navo：好的，我會再10點幫忙關燈</p>
+        </article>
+
+        <article class="feature-card" data-reveal>
+          <span class="card-orb" aria-hidden="true"></span>
+          <span class="feature-index">看守</span>
+          <h3>看家</h3>
+          <p>Navo：IP攝影機，偵測到有人經過，但現在是晚上，建議去查看。</p>
+        </article>
+
+        <article class="feature-card" data-reveal>
+          <span class="card-orb" aria-hidden="true"></span>
+          <span class="feature-index">隨時待命</span>
+          <h3>幫我把檔案整理整理</h3>
+          <p>Navo：桌面檔案已配放完畢。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-workflow" id="workflow">
+      <div class="section-orbs" aria-hidden="true">
+        <span class="mini-orb mini-orb-a"></span>
+        <span class="mini-orb mini-orb-b"></span>
+      </div>
+
+      <div class="workflow-panel" data-reveal>
+        <span class="panel-orb" aria-hidden="true"></span>
+        <div class="workflow-copy">
+          <span class="section-kicker">Workflow</span>
+          <h2>多任務_自我提醒</h2>
+          <p>
+            NavoAI 不只執行單一步驟，還會給自己設定鬧鐘。
+          </p>
+        </div>
+
+        <div class="workflow-steps">
+          <div class="workflow-step">
+            <span class="card-orb" aria-hidden="true"></span>
+            <span class="step-index">排程</span>
+            <strong>兩點開趴，讓燈噪動</strong>
+            <p>Navo：2點讓燈閃爍</p>
+          </div>
+          <div class="workflow-step">
+            <span class="card-orb" aria-hidden="true"></span>
+            <span class="step-index">自己提醒</span>
+            <strong>(時間到了)</strong>
+            <p>Navo：開關開關燈</p>
+          </div>
+          <div class="workflow-step">
+            <span class="card-orb" aria-hidden="true"></span>
+            <span class="step-index">無格式，時程表</span>
+            <strong>CMD</strong>
+            <p>任務完成關閉電腦</p>
+          </div>
+          <div class="workflow-step">
+            <span class="card-orb" aria-hidden="true"></span>
+            <span class="step-index">自我增強</span>
+            <strong>技能學習</strong>
+            <p>自行閱讀程式庫，並增強自我。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section section-proof">
+      <div class="section-orbs" aria-hidden="true">
+        <span class="mini-orb mini-orb-a"></span>
+        <span class="mini-orb mini-orb-b"></span>
+      </div>
+
+      <div class="proof-grid">
+        <article class="proof-card proof-card-wide" data-reveal>
+          <span class="card-orb" aria-hidden="true"></span>
+          <span class="section-kicker">說話不好用?</span>
+          <p>
+            打開127.0.0.1:5050，查看log、對話、設定ESP設備...
+          </p>
+        </article>
+
+        <article class="proof-card" data-reveal>
+          <span class="card-orb" aria-hidden="true"></span>
+          <span class="proof-label">隱私懼怕?</span>
+          <p>NavoAI會用你自己的API，我們沒有教他給我們資料。</p>
+        </article>
+
+        <article class="proof-card" data-reveal>
+          <span class="card-orb" aria-hidden="true"></span>
+          <span class="proof-label">Windows視窗不好看?</span>
+          <p>我們透過：泡泡緩動+點選泡泡時的極簡設定視窗，讓UI煥然一新。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-cta" id="cta">
+      <div class="section-orbs" aria-hidden="true">
+        <span class="mini-orb mini-orb-a"></span>
+        <span class="mini-orb mini-orb-b"></span>
+      </div>
+
+      <div class="cta-panel" data-reveal>
+        <span class="panel-orb" aria-hidden="true"></span>
+        <span class="section-kicker">Launch</span>
+        <h2>How to use?
+        </h2>
+        <p>下載NavoAI.zip解壓縮</p>
+        <p>打開資料夾中的apikey.json</p>
+        <p>去 https://openrouter.ai/ 獲取APIkey 並將"active_provider": "groq"改成"active_provider": "openrouter"</p>
+        <p>(active_provider的value要為您填入的APIKEY發行公司)</p>
+        <p>最後將openrouter"openrouter": 大括弧中間的""填入您的APIkey </p>
+        <p>故：更改最上方的"groq"為"openrouter"並\n最後於下方的openrouter裡面的""中填入您的APIkey</p>
+        <h3>>打開NavoAI.exe並允許權限，開啟豐富的對話</h3>
+        <div class="hero-actions">
+          <a class="https://media.githubusercontent.com/media/Richard889488/navoai-site/main/downloads/BUILDv9.zip">立即下載</a>
+          <a class="button button-secondary" href="#top">回到頂部</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-</body>
+  <footer class="site-footer">
+    <p>NavoAI</p>
+    <p>請務必小心提供任務，請勿給出類似刪除檔案等指令，如AI損害到您的電腦檔案，我們向您致歉，本公司不會提供任何法律補償。謝謝!</p>
+    <p>開發者：Richard Lin 林佑謙 Gmail：richardtwomaker@gmail.com</p>
+  </footer>
+</div>
 
+<script src="js/main.js"></script>
+<script>
+  // Interactive device dragging functionality
+  const espDevice = document.getElementById('espDevice');
+  const nanoResponse = document.getElementById('nanoResponse');
+  const responseText = document.getElementById('responseText');
+  const ledIndicator = document.getElementById('ledIndicator');
+  const ledDot = ledIndicator.querySelector('.led-dot');
+  
+  let isDragging = false;
+  let dragStartTime = 0;
+
+  espDevice.addEventListener('dragstart', (e) => {
+    isDragging = true;
+    dragStartTime = Date.now();
+    espDevice.style.opacity = '0.7';
+    nanoResponse.style.display = 'block';
+    responseText.textContent = '5秒後關燈';
+    
+    // Animate response
+    nanoResponse.style.animation = 'none';
+    setTimeout(() => {
+      nanoResponse.style.animation = 'slideInResponse 0.6s ease-out';
+    }, 10);
+  });
+
+  espDevice.addEventListener('dragend', (e) => {
+    if (isDragging) {
+      isDragging = false;
+      const dragDuration = Date.now() - dragStartTime;
+      
+      // Grey out LED after drag
+      ledIndicator.classList.remove('active');
+      ledIndicator.classList.add('inactive');
+      ledDot.style.background = '#ccc';
+      
+      // Update status text
+      const statusEl = espDevice.querySelector('.device-status');
+      statusEl.textContent = '已執行';
+      statusEl.style.color = '#ef4444';
+      
+      // Hide response after delay
+      setTimeout(() => {
+        nanoResponse.style.animation = 'slideOutResponse 0.6s ease-out';
+        setTimeout(() => {
+          nanoResponse.style.display = 'none';
+          // Reset after 3 seconds
+          setTimeout(() => {
+            espDevice.style.opacity = '1';
+            ledIndicator.classList.remove('inactive');
+            ledIndicator.classList.add('active');
+            ledDot.style.background = '#10b981';
+            statusEl.textContent = '就緒';
+            statusEl.style.color = '#6b7280';
+          }, 2000);
+        }, 600);
+      }, 2500);
+    }
+  });
+
+  // Prevent default drag behavior
+  espDevice.addEventListener('drag', (e) => {
+    e.preventDefault();
+  });
+
+  // Add drag visual feedback
+  document.addEventListener('dragover', (e) => {
+    e.preventDefault();
+  });
+</script>
+</body>
 </html>
